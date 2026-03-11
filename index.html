@@ -2,372 +2,387 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>디지털 오피스 설명회 초대</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --navy: #1e3a5f;
-    --navy-deep: #0f2440;
-    --gold: #c9a227;
-    --gold-light: #e8d48b;
-    --gold-soft: #f5ecd0;
-    --white: #ffffff;
-    --gray-light: #f7f8fa;
-    --gray: #6b7280;
-    --text-dark: #1a1a2e;
-  }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; overflow: hidden; }
 
   body {
     font-family: 'Noto Sans KR', sans-serif;
-    background: var(--gray-light);
-    color: var(--text-dark);
-    min-height: 100vh;
+    height: 100dvh;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
+    align-items: center;
+    background: #d5d5d5;
   }
 
-  .container {
-    max-width: 640px;
+  .card {
     width: 100%;
-    background: var(--white);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 24px rgba(30, 58, 95, 0.10), 0 1px 4px rgba(0,0,0,0.06);
-  }
-
-  /* ── Header ── */
-  .header {
-    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 60%, #2a5080 100%);
-    padding: 48px 36px 40px;
-    text-align: center;
+    max-width: 440px;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background: #f3f3f3;
     position: relative;
     overflow: hidden;
   }
 
-  .header::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -60px;
-    width: 200px; height: 200px;
-    background: radial-gradient(circle, rgba(201,162,39,0.12) 0%, transparent 70%);
-    border-radius: 50%;
+  /* ── Top Bar ── */
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px 0;
+    flex-shrink: 0;
   }
 
-  .header::after {
-    content: '';
-    position: absolute;
-    bottom: -40px; left: -30px;
-    width: 160px; height: 160px;
-    background: radial-gradient(circle, rgba(201,162,39,0.08) 0%, transparent 70%);
-    border-radius: 50%;
+  .company-mark {
+    font-size: 10px;
+    font-weight: 500;
+    color: #999;
+    letter-spacing: 2.5px;
   }
 
   .badge {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--navy-deep);
-    font-size: 12px;
+    font-size: 9px;
     font-weight: 700;
+    color: #fff;
     letter-spacing: 2px;
-    padding: 6px 20px;
-    border-radius: 20px;
-    margin-bottom: 24px;
-    position: relative;
+    background: #c02030;
+    padding: 4px 12px;
+    border-radius: 2px;
   }
 
-  .header h1 {
-    color: var(--white);
-    font-size: 15px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    margin-bottom: 12px;
-    position: relative;
+  /* ── Hero ── */
+  .hero {
+    padding: 28px 24px 0;
+    flex-shrink: 0;
   }
 
-  .header .title-main {
-    color: var(--white);
-    font-size: 28px;
-    font-weight: 900;
-    line-height: 1.35;
-    position: relative;
+  .hero-sub {
+    font-size: 11px;
+    font-weight: 500;
+    color: #c02030;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.12;
     margin-bottom: 6px;
   }
 
-  .title-main .highlight {
-    color: var(--gold-light);
+  .hero-ko {
+    font-size: 18px;
+    font-weight: 300;
+    color: #555;
+    letter-spacing: 2px;
   }
 
-  .header .subtitle {
-    color: rgba(255,255,255,0.7);
-    font-size: 13px;
-    font-weight: 300;
-    margin-top: 16px;
-    line-height: 1.6;
+  /* ── Divider ── */
+  .divider {
+    margin: 20px 24px;
+    height: 2px;
+    background: #1a1a1a;
+    flex-shrink: 0;
     position: relative;
   }
 
-  /* ── Gold Divider ── */
-  .gold-divider {
-    height: 3px;
-    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  .divider::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 48px; height: 2px;
+    background: #c02030;
   }
 
-  /* ── Body ── */
-  .body {
-    padding: 36px 32px;
-  }
-
-  .intro-text {
-    font-size: 14.5px;
-    line-height: 1.85;
-    color: #374151;
-    text-align: center;
-    margin-bottom: 12px;
-    word-break: keep-all;
-  }
-
-  .intro-text strong {
-    color: var(--navy);
-    font-weight: 700;
-  }
-
-  .intro-text .free-tag {
-    display: inline-block;
-    background: linear-gradient(135deg, #dc2626, #ef4444);
-    color: #fff;
-    font-weight: 700;
-    font-size: 13px;
-    padding: 2px 10px;
-    border-radius: 4px;
-    margin: 0 2px;
-  }
-
-  .intro-highlight {
-    text-align: center;
-    font-size: 13.5px;
-    color: var(--navy);
-    font-weight: 500;
-    margin-bottom: 32px;
-    padding: 14px 20px;
-    background: var(--gold-soft);
-    border-radius: 10px;
-    border-left: 4px solid var(--gold);
-    line-height: 1.7;
-    word-break: keep-all;
-  }
-
-  /* ── Dashed Separator ── */
-  .dashed-sep {
-    text-align: center;
-    color: var(--navy);
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 3px;
-    margin-bottom: 28px;
-    opacity: 0.5;
-  }
-
-  /* ── Info Items ── */
-  .info-list {
+  /* ── Content ── */
+  .content {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    padding: 0 24px;
     gap: 16px;
-    margin-bottom: 32px;
   }
 
-  .info-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
+  .invite-msg {
+    font-size: 13.5px;
+    line-height: 1.9;
+    color: #555;
+    word-break: keep-all;
   }
 
-  .info-icon {
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, var(--navy), var(--navy-deep));
+  .invite-msg strong {
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+
+  /* ── Benefit ── */
+  .benefit-box {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    margin-top: 2px;
+    gap: 14px;
+    padding: 14px 18px;
+    background: #1a1a1a;
+    border-radius: 6px;
   }
 
-  .info-content {
-    flex: 1;
-  }
-
-  .info-label {
-    font-size: 11px;
+  .benefit-box .year {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
     font-weight: 700;
-    color: var(--gold);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 3px;
+    color: #c02030;
+    line-height: 1;
   }
 
-  .info-value {
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--text-dark);
-    line-height: 1.5;
-  }
-
-  .info-value small {
-    font-size: 12.5px;
-    color: var(--gray);
+  .benefit-box .year small {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
     font-weight: 400;
+    color: #e05060;
   }
 
-  /* ── CTA Button ── */
+  .benefit-box .desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.55;
+  }
+
+  .benefit-box .desc b {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  /* ── Details Grid ── */
+  .details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .detail-item {
+    padding: 11px 14px;
+    background: #fff;
+    border-radius: 6px;
+  }
+
+  .detail-item.full {
+    grid-column: 1 / -1;
+  }
+
+  .detail-label {
+    font-size: 9px;
+    font-weight: 700;
+    color: #c02030;
+    letter-spacing: 1.5px;
+    margin-bottom: 4px;
+  }
+
+  .detail-value {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.4;
+  }
+
+  .detail-value small {
+    font-size: 10.5px;
+    font-weight: 400;
+    color: #999;
+  }
+
+  /* ── CTA ── */
   .cta-wrap {
     text-align: center;
-    margin-bottom: 28px;
+    padding-top: 2px;
+  }
+
+  @keyframes goldGlow {
+    0%, 100% {
+      box-shadow: 
+        0 0 8px rgba(201,162,39,0.3),
+        0 0 20px rgba(201,162,39,0.1),
+        inset 0 0 0 1.5px #c9a227;
+    }
+    50% {
+      box-shadow: 
+        0 0 16px rgba(201,162,39,0.5),
+        0 0 36px rgba(201,162,39,0.2),
+        inset 0 0 0 1.5px #e8d48b;
+    }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
   }
 
   .cta-btn {
     display: inline-block;
-    background: linear-gradient(135deg, var(--gold), #b8911e);
-    color: var(--navy-deep);
+    background: #c02030;
+    color: #fff;
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
-    padding: 16px 48px;
-    border-radius: 50px;
+    padding: 13px 56px;
+    border-radius: 4px;
     text-decoration: none;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 16px rgba(201, 162, 39, 0.35);
-    transition: all 0.25s ease;
+    letter-spacing: 2px;
+    border: 2px solid #c9a227;
+    animation: goldGlow 2s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+
+  .cta-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 30%,
+      rgba(232,212,139,0.25) 45%,
+      rgba(232,212,139,0.4) 50%,
+      rgba(232,212,139,0.25) 55%,
+      transparent 70%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2.5s ease-in-out infinite;
+    pointer-events: none;
   }
 
   .cta-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(201, 162, 39, 0.45);
+    background: #d4283a;
+    border-color: #e8d48b;
   }
 
-  .closing-text {
-    text-align: center;
-    font-size: 14px;
-    color: #4b5563;
-    line-height: 1.7;
-    margin-bottom: 0;
+  /* ── Bottom ── */
+  .bottom-bar {
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-shrink: 0;
+    border-top: 1px solid #e0e0e0;
+    margin: 0 24px;
+    padding: 16px 0;
+  }
+
+  .closing {
+    font-size: 11px;
+    color: #999;
+    line-height: 1.65;
     word-break: keep-all;
   }
 
-  /* ── Footer ── */
-  .footer {
-    background: var(--navy-deep);
-    padding: 24px 32px;
-    text-align: center;
+  .logo-area {
+    text-align: right;
   }
 
-  .footer-company {
-    color: var(--gold-light);
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 4px;
-  }
-
-  .footer-sub {
-    color: rgba(255,255,255,0.4);
+  .logo-area .name {
     font-size: 11px;
-    font-weight: 300;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: 0.5px;
   }
 
-  /* ── Mobile ── */
-  @media (max-width: 480px) {
-    body { padding: 10px; }
-    .header { padding: 36px 24px 32px; }
-    .header .title-main { font-size: 24px; }
-    .body { padding: 28px 20px; }
-    .cta-btn { padding: 14px 36px; font-size: 15px; }
-    .info-item { gap: 12px; }
-    .info-icon { width: 36px; height: 36px; font-size: 16px; }
+  .logo-area .sub {
+    font-size: 8px;
+    color: #aaa;
+    letter-spacing: 1px;
+    margin-top: 1px;
+  }
+
+  /* ── Desktop ── */
+  @media (min-width: 481px) {
+    .card {
+      height: 780px;
+      border-radius: 12px;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.1);
+    }
+  }
+
+  /* ── Small phones ── */
+  @media (max-height: 680px) {
+    .hero { padding-top: 20px; }
+    .hero-title { font-size: 28px; }
+    .divider { margin: 14px 24px; }
+    .content { gap: 12px; }
+    .benefit-box { padding: 10px 14px; }
+    .benefit-box .year { font-size: 26px; }
   }
 </style>
 </head>
 <body>
 
-<div class="container">
+<div class="card">
 
-  <!-- Header -->
-  <div class="header">
-    <div class="badge">리더 전용</div>
-    <h1>개인 맞춤형</h1>
-    <div class="title-main">
-      <span class="highlight">Digital Office</span><br>설명회
-    </div>
-    <div class="subtitle">컨설턴트 전용 오픈세션에 초대합니다</div>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="company-mark">KFPC</div>
+    <div class="badge">LEADERS ONLY</div>
   </div>
 
-  <div class="gold-divider"></div>
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-sub">개인 맞춤형</div>
+    <div class="hero-title">Digital Office</div>
+    <div class="hero-ko">설명회</div>
+  </div>
 
-  <!-- Body -->
-  <div class="body">
+  <div class="divider"></div>
 
-    <p class="intro-text">
+  <!-- Content -->
+  <div class="content">
+
+    <p class="invite-msg">
       고객에게 <strong>신뢰와 전문성</strong>을 어필할 수 있는<br>
-      <strong>"컨설턴트 전용" Digital Office</strong> 오픈세션에 초대합니다.
+      <strong>컨설턴트 전용</strong> 오픈세션에 초대합니다.
     </p>
 
-    <div class="intro-highlight">
-      이번 설명회에 참석하시는 <strong>리더</strong>님께<br>
-      1년간 본 시스템을 <span class="free-tag">무료</span> 제공해 드립니다.
+    <div class="benefit-box">
+      <div class="year">1<small>년</small></div>
+      <div class="desc">참석 리더님께<br><b>시스템 무료</b> 제공</div>
     </div>
 
-    <div class="dashed-sep">── 아 &nbsp; 래 ──</div>
-
-    <!-- Info List -->
-    <div class="info-list">
-
-      <div class="info-item">
-        <div class="info-icon">📅</div>
-        <div class="info-content">
-          <div class="info-label">일정</div>
-          <div class="info-value">3월 12일 ~ 18일 <small>(90분, 링크 참조)</small></div>
-        </div>
+    <!-- Details Grid -->
+    <div class="details">
+      <div class="detail-item full">
+        <div class="detail-label">일정</div>
+        <div class="detail-value">3.12 — 3.18 <small>&nbsp;90분 · 링크 참조</small></div>
       </div>
-
-      <div class="info-item">
-        <div class="info-icon">📍</div>
-        <div class="info-content">
-          <div class="info-label">장소</div>
-          <div class="info-value">(주)한국FP센터 본사 <small>(서울 송파)</small></div>
-        </div>
+      <div class="detail-item">
+        <div class="detail-label">장소</div>
+        <div class="detail-value">한국FP센터 본사<br><small>서울 송파</small></div>
       </div>
-
-      <div class="info-item">
-        <div class="info-icon">🅿️</div>
-        <div class="info-content">
-          <div class="info-label">주차</div>
-          <div class="info-value">가능 <small>(건물 내 지하주차장)</small></div>
-        </div>
+      <div class="detail-item">
+        <div class="detail-label">주차</div>
+        <div class="detail-value">가능<br><small>건물 내 지하주차장</small></div>
       </div>
-
     </div>
 
     <!-- CTA -->
     <div class="cta-wrap">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdmqnkB0e7SWbr_ebj2RZMoW1PkuPIY0Z9_cAPHEafZr_WQxg/viewform" class="cta-btn">✦&nbsp; 신청하기 &nbsp;✦</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdmqnkB0e7SWbr_ebj2RZMoW1PkuPIY0Z9_cAPHEafZr_WQxg/viewform" class="cta-btn">신청하기</a>
     </div>
-
-    <p class="closing-text">
-      함께하셔서 한 단계 더 성장하는 기회를 잡아보세요!
-    </p>
 
   </div>
 
-  <!-- Footer -->
-  <div class="footer">
-    <div class="footer-company">(주)한국FP센터</div>
-    <div class="footer-sub">KFPC · Korea FP Center</div>
+  <!-- Bottom -->
+  <div class="bottom-bar">
+    <div class="closing">함께하셔서 한 단계 더<br>성장하는 기회를 잡아보세요.</div>
+    <div class="logo-area">
+      <div class="name">(주)한국FP센터</div>
+      <div class="sub">KOREA FP CENTER</div>
+    </div>
   </div>
 
 </div>
